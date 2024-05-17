@@ -1,63 +1,59 @@
 # **Langchain**
 
+These models are trained on massive amounts of text data to learn patterns and entity relationships in the language. LLMs use deep learning algorithms to process and understand natural language, performing tasks such as translating, analyzing sentiments, and generating new text.
+
 ![logo](https://media.gettyimages.com/id/1801115823/photo/in-this-photo-illustration-the-langchain-logo-is-displayed.jpg?b=1&s=594x594&w=0&k=20&c=OpkcRRc6G8I_-jYYk4Tgu5gWVtgYilTypQ4naXcNJqU=)
 
 ## **TABLE OF CONTENT**
 
-1. [**Introduction to Langchain**](#Introduction-to-Langchain)
+**1.** [**Introduction to Langchain**](#Introduction-to-Langchain)
 
-2. [**Components**](#Components)
+**2.** [**Components**](#Components)
 
-  * [**Schema**](#Schema)
+* [**Schema**](#Schema)
+* [**Models**](#Models)
+* [**Prompts**](#Prompts)
+* [**Parsers**](#Parsers)
+* [**Indexes**](#Indexes)
 
-  * [**Models**](#Models)
+  - [**Document Loading**](#Document-Loading)   
 
-  * [**Prompts**](#Prompts)
+  -  [**Documnet Splitting**](#Documnet-Splitting)  
 
-  * [**Parsers**](#Parsers)
+  - [**Vectors and Embeddings**](#Vectors-and-Embeddings) 
 
-  * [**Indexes**](#Indexes)
+  - [**Retrevial**](#retrevial)
 
-    - [**Document Loading**](#Document-Loading)   
+* [**Memory**](#Memory)
 
-    -  [**Documnet Splitting**](#Documnet-Splitting)  
+  - [**Chat Message History**](#Chat-Message-History)
 
-    - [**Vectors and Embeddings**](#Vectors-and-Embeddings) 
+  - [**Conversation Buffer Memory**](#Conversation-Buffer-Memory)
 
-    - [**Retrevial**](#retrevial)
+  - [**Conversation Buffer Window Memory**](#Conversation-Buffer-Window-Memory)
 
-  * [**Memory**](#Memory)
+  - [**Conversation Token Buffer Memory**](#Conversation-Token-Buffer-Memory)
 
-    - [**Chat Message History**](#Chat-Message-History)
+  - [**Conversation Summary Memory**](#Conversation-Summary-Memory)
 
-    - [**Conversation Buffer Memory**](#Conversation-Buffer-Memory)
+  - [**Knowledge Graph Memory**](#Knowledge-Graph-Memory)
 
-    - [**Conversation Buffer Window Memory**](#Conversation-Buffer-Window-Memory)
+  - [**Entity Memory**](#Entity-Memory)
 
-    - [**Conversation Token Buffer Memory**](#Conversation-Token-Buffer-Memory)
+* [**Chains**](#Chains)
+* [**Agents**](#Agents)
 
-    - [**Conversation Summary Memory**](#Conversation-Summary-Memory)
-
-    - [**Knowledge Graph Memory**](#Knowledge-Graph-Memory)
-
-    - [**Entity Memory**](#Entity-Memory)
-
-  * [**Chains**](#Chains)
-
-  * [**Agents**](#Agents)
-
-3. [**References**](#References)
+**3.** [**References**](#References)
 
 ---
 
 ## **Introduction to Langchain**
 
-* LangChain is an open-source framework designed to simplify the creation of applications using large language models (LLMs). It provides a standard interface for chains, lots of integrations with other tools, and end-to-end chains for common applications. It allows AI developers to develop applications based on the combined Large Language Models (LLMs) such as GPT-4 with external sources of computation and data. This framework comes with a package for both Python and JavaScript.
-
-* LangChain follows a general pipeline where a user asks a question to the language model where the vector representation of the question is used to do a similarity search in the vector database and the relevant information is fetched from the vector database and the response is later fed to the language model. further, the language model generates an answer or takes an action.
+* Langchain is an open-source framework that equips developers with the necessary tools to create applications powered by large language models
+(LLMs). Langchain is similar to Lego blocks for LLMs; you can use multiple models for various behaviors for different tasks without having to learn each one from scratch,
+and then you can create pipelines using Langchain speed un application development.
 
   1. [**Evolve**](#Evolve)
-
   2. [**Why do we need Langchain?**](#Why-do-we-need-Langchain?)
 
 ---
@@ -80,7 +76,11 @@
 
 ### **Why do we need Langchain?**
 
-LangChain allows developers to create data-aware and agentic applications that can interact with their environment and leverage the power of large language models. Here are some use cases and examples of applications built with LangChain:
+* Most of the LLMs(OpenAi, Al 21 Labs, LLaMA...) are not up to date
+
+* They are not good at Domain Knowledge and fail when working with Proprietary data
+
+* Working with different LLMs may become a tedious task
 
 * **Autonomous agents:** LangChain can be used to create autonomous agents that can write code, run tests, and deploy applications using natural language commands. This is particularly useful for automating repetitive tasks and improving productivity.
 
@@ -289,6 +289,8 @@ This section defines a customer email and a desired style. Then, it constructs a
 ---
 
 ### **Parsers**
+
+Output parsers are responsible for taking the output of an LLM and transforming it to a more suitable format. This is very useful when you are using LLMs to generate any form of structured data.
 
 ```python
 # Output Parsers
@@ -686,6 +688,10 @@ docs = c_splitter.split_documents(pages)
 
 **Embeddings**
 
+LangChain Embeddings are numerical representations of text data, designed to be fed into machine learning algorithms. These embeddings are crucial for a variety of natural language processing (NLP) tasks, such as sentiment analysis, text classification, and language translation.
+
+![image](img/e.jpg)
+
 ```python
 # !pip install sentence-transformers
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceEmbeddings
@@ -714,6 +720,9 @@ print (f"Here's a sample: {text_embedding[:5]}...")
 **Vectorstore**
 
 VectorStore is a component of LangChain that facilitates efficient storage and retrieval of document embeddings, which are vector representations of documents. These embeddings are created using language models and are valuable for various natural language processing tasks such as information retrieval and document similarity analysis.
+
+
+![image](img/v.jpg)
 
 **Installation:**
 
