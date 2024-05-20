@@ -54,7 +54,6 @@ These models are trained on massive amounts of text data to learn patterns and e
 * Langchain is an open-source framework that equips developers with the necessary tools to create applications powered by large language models
 (LLMs). Langchain is similar to Lego blocks for LLMs; you can use multiple models for various behaviors for different tasks without having to learn each one from scratch, and then you can create pipelines using Langchain speed un application development.
 
-![Langchain](img/langchain.jpeg)
 
   1. [**Evolve**](#Evolve)
   2. [**Why do we need Langchain?**](#Why-do-we-need-Langchain?)
@@ -134,6 +133,8 @@ These models are trained on massive amounts of text data to learn patterns and e
 7. [**Chains**](#Chains)
 
 8. [**Agents**](#Agents)
+
+9. [**Embeddings**](#Embeddings)
 
 ![Components](img/companes.png)
 
@@ -1557,3 +1558,11 @@ print("Vector 2 first 4 values:", vector_2[:4])
 5. https://www.youtube.com/watch?v=mBJqGAHoam4
 
 6. https://langchain-cn.readthedocs.io/en/latest/modules/models/text_embedding/examples/huggingfacehub.html
+
+7. https://www.youtube.com/watch?v=rh7aB-Pbxa4
+
+8. https://www.youtube.com/watch?v=RC3JOzN2F1w
+
+9. https://www.youtube.com/watch?v=SZorAJ4I-sA
+
+10. https://www.youtube.com/watch?v=iUmL4p_N79I
